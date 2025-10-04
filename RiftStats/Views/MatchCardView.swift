@@ -25,7 +25,7 @@ struct MatchCardView: View {
                 .frame(width: 4)
 
             // Champion Icon
-            AsyncImage(url: URL(string: "https://ddragon.leagueoflegends.com/cdn/14.1.1/img/champion/\(participant.championName).png")) { image in
+            AsyncImage(url: URL(string: "https://ddragon.leagueoflegends.com/cdn/15.19.1/img/champion/\(participant.championName).png")) { image in
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -70,7 +70,7 @@ struct MatchCardView: View {
             VStack(alignment: .trailing, spacing: 2) {
                 HStack(spacing: 2) {
                     ForEach(Array(participant.items.prefix(4).enumerated()), id: \.offset) { index, itemId in
-                        AsyncImage(url: URL(string: "https://ddragon.leagueoflegends.com/cdn/14.1.1/img/item/\(itemId).png")) { image in
+                        AsyncImage(url: URL(string: "https://ddragon.leagueoflegends.com/cdn/15.19.1/img/item/\(itemId).png")) { image in
                             image
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
@@ -86,7 +86,7 @@ struct MatchCardView: View {
                 if participant.items.count > 4 {
                     HStack(spacing: 2) {
                         ForEach(Array(participant.items.suffix(from: 4).enumerated()), id: \.offset) { index, itemId in
-                            AsyncImage(url: URL(string: "https://ddragon.leagueoflegends.com/cdn/14.1.1/img/item/\(itemId).png")) { image in
+                            AsyncImage(url: URL(string: "https://ddragon.leagueoflegends.com/cdn/15.19.1/img/item/\(itemId).png")) { image in
                                 image
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)

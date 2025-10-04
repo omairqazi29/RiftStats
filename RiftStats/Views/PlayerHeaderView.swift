@@ -5,7 +5,7 @@ struct PlayerHeaderView: View {
 
     var body: some View {
         VStack(spacing: 12) {
-            AsyncImage(url: URL(string: "https://ddragon.leagueoflegends.com/cdn/14.23.1/img/profileicon/\(player.profileIconId).png")) { phase in
+            AsyncImage(url: URL(string: "https://ddragon.leagueoflegends.com/cdn/15.19.1/img/profileicon/\(player.profileIconId).png")) { phase in
                 switch phase {
                 case .success(let image):
                     image
