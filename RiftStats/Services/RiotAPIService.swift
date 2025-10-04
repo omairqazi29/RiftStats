@@ -2,7 +2,14 @@ import Foundation
 import Combine
 
 class RiotAPIService: ObservableObject {
-    private let apiKey = "RGAPI-fa6f0f4e-ba3f-488e-8b4b-0335daf1c228"
+    private let apiKey: String = {
+        guard let path = Bundle.main.path(forResource: "Config", ofType: "plist"),
+              let config = NSDictionary(contentsOfFile: path),
+              let key = config["RIOT_API_KEY"] as? String else {
+            fatalError("API Key not found in Config.plist")
+        }
+        return key
+    }()
     private let region = "americas"
     private let platformId = "na1"
 
