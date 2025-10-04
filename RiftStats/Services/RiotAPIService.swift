@@ -2,7 +2,7 @@ import Foundation
 import Combine
 
 class RiotAPIService: ObservableObject {
-    private let apiKey = "RGAPI-ec58b3b5-4985-4165-814b-e0d456568637"
+    private let apiKey = "RGAPI-fa6f0f4e-ba3f-488e-8b4b-0335daf1c228"
     private let region = "americas"
     private let platformId = "na1"
 
