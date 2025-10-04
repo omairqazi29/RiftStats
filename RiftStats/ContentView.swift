@@ -9,7 +9,7 @@ struct ContentView: View {
     @State private var errorMessage: String?
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 Color("BackgroundColor")
                     .ignoresSafeArea()
