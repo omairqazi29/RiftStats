@@ -87,6 +87,22 @@ RiftStats/
 
 MIT
 
+## Privacy Policy
+
+RiftStats does not collect, store, or share any personal data from users.
+
+**Data Collection:** None. The app does not collect any user data.
+
+**Third-Party Services:** The app fetches public game statistics from the Riot Games API. No personal information is sent to or stored by our servers.
+
+**Data Storage:** All data displayed is fetched in real-time from Riot Games and is not stored locally on your device.
+
+**Analytics:** We do not use any analytics or tracking services.
+
+**Contact:** For privacy concerns, please open an issue on this GitHub repository.
+
+*Last updated: October 4, 2025*
+
 ## Related Projects
 
 - [league-stats](https://github.com/omairqazi29/league-stats) - Web version of this app
