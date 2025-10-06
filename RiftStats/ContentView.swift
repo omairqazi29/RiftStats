@@ -8,6 +8,20 @@ struct ContentView: View {
     @State private var isLoading = false
     @State private var errorMessage: String?
 
+    // Computed binding that filters out quotes, periods, and trims whitespace
+    private var sanitizedSearchText: Binding<String> {
+        Binding(
+            get: { searchText },
+            set: { newValue in
+                // Filter out quotes (regular and smart quotes) and periods
+                let charsToRemove: Set<Character> = ["\"", "'", "\u{201C}", "\u{201D}", "\u{2018}", "\u{2019}", "."]
+                let filtered = newValue.filter { !charsToRemove.contains($0) }
+                // Trim leading and trailing whitespace
+                searchText = filtered.trimmingCharacters(in: .whitespaces)
+            }
+        )
+    }
+
     var body: some View {
         NavigationStack {
             ZStack {
@@ -32,7 +46,7 @@ struct ContentView: View {
                         Image(systemName: "magnifyingglass")
                             .foregroundColor(.gray)
 
-                        TextField("Search by Riot ID (Name#TAG)", text: $searchText)
+                        TextField("Search by Riot ID (Name#TAG)", text: sanitizedSearchText)
                             .foregroundColor(.white)
                             .autocapitalization(.none)
                             .disableAutocorrection(true)
