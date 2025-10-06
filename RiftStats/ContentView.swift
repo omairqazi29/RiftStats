@@ -105,14 +105,20 @@ struct ContentView: View {
     }
 
     private func performSearch() {
-        let components = searchText.split(separator: "#")
+        // Sanitize input by removing quotes and trimming whitespace
+        let sanitizedText = searchText
+            .replacingOccurrences(of: "\"", with: "")
+            .replacingOccurrences(of: "'", with: "")
+            .trimmingCharacters(in: .whitespaces)
+
+        let components = sanitizedText.split(separator: "#")
         guard components.count == 2 else {
             errorMessage = "Invalid format. Use Name#TAG"
             return
         }
 
-        let gameName = String(components[0])
-        let tagLine = String(components[1])
+        let gameName = String(components[0]).trimmingCharacters(in: .whitespaces)
+        let tagLine = String(components[1]).trimmingCharacters(in: .whitespaces)
 
         isLoading = true
         errorMessage = nil
